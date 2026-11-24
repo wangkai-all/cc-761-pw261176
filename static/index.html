@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多地点损失依赖分析 · 合成实验</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <h1>多地点损失依赖分析</h1>
+      <p class="sub">边际拟合 → 两类依赖模型 → 联合场景 · 只看各自分布无法估计总损失</p>
+    </div>
+    <div class="topbar-actions">
+      <span class="badge badge-synth">100% 合成数据</span>
+      <button id="themeBtn" class="btn btn-ghost" type="button" aria-label="切换深浅色主题" title="切换深浅色主题">◐</button>
+    </div>
+  </header>
+
+  <section id="controls" class="controls card" aria-label="拟合控制"></section>
+
+  <div id="staleBanner" aria-live="polite"></div>
+
+  <nav class="tabs" role="tablist" aria-label="分析步骤">
+    <button role="tab" data-tab="data" class="tab" aria-selected="true">数据与日历</button>
+    <button role="tab" data-tab="marginals" class="tab">边际拟合</button>
+    <button role="tab" data-tab="dependence" class="tab">依赖与参数</button>
+    <button role="tab" data-tab="scenarios" class="tab">联合场景</button>
+    <button role="tab" data-tab="validation" class="tab">校验</button>
+    <button role="tab" data-tab="downloads" class="tab">下载</button>
+  </nav>
+
+  <main id="view" class="view" aria-live="polite"></main>
+
+  <footer class="footer">
+    <p>所有金额均为合成实验数据，不来自任何真实标的。模型选择仅在训练期完成；评估期只用于检验联合超限覆盖。</p>
+  </footer>
+</div>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
